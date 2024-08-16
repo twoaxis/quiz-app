@@ -25,6 +25,7 @@ analyzer:
   errors:
     unused_import: ignore
     must_be_immutable: ignore
+    unused_element: ignore
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 

@@ -3,15 +3,20 @@ import 'package:quizapp/theme/theme.dart';
 
 class Customtextfield extends StatelessWidget {
   Customtextfield(
-      {required this.IsPassword, required this.image, required this.text});
+      {required this.IsPassword,
+      required this.image,
+      required this.text,
+      required this.controller});
   String text;
   IconData image;
   bool IsPassword;
+  TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: TextField(
+        controller: controller,
         keyboardType: TextInputType.text,
         obscureText: IsPassword,
         decoration: InputDecoration(

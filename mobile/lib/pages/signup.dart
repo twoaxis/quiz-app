@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizapp/componant/customTextField.dart';
+import 'package:quizapp/componant/error.dart';
 import 'package:quizapp/theme/theme.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class Signup extends StatefulWidget {
+  Signup({super.key});
+
+  @override
+  State<Signup> createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
+  String error = '';
+
+  TextEditingController nameController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
+
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +44,10 @@ class Signup extends StatelessWidget {
             ),
             Text(
               'Sign up',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(
               height: 20,
@@ -39,14 +56,30 @@ class Signup extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
+            error.length > 0
+                ? Errorwidget(content: error)
+                : SizedBox(height: 0),
+            SizedBox(
+              height: 28.0,
+            ),
             Customtextfield(
-                IsPassword: false, image: Icons.person, text: 'UserName'),
+              IsPassword: false,
+              image: Icons.person,
+              text: 'UserName',
+              controller: nameController,
+            ),
             Customtextfield(
-                IsPassword: true, image: Icons.password, text: 'Password'),
+              IsPassword: true,
+              image: Icons.password,
+              text: 'Password',
+              controller: passwordController,
+            ),
             Customtextfield(
-                IsPassword: true,
-                image: Icons.password,
-                text: 'Confirm Password'),
+              IsPassword: true,
+              image: Icons.password,
+              text: 'Confirm Password',
+              controller: confirmPasswordController,
+            ),
             SizedBox(
               height: 25,
             ),
@@ -57,7 +90,21 @@ class Signup extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(Buttoncolor),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  if (passwordController.text ==
+                      confirmPasswordController.text) {
+                    setState(() {
+                      error = '';
+                    });
+                  } else if (passwordController.text !=
+                      confirmPasswordController.text) {
+                    setState(() {
+                      error = 'Password and Confirm Password must be same';
+                    });
+                  } else {
+                    setState(() {});
+                  }
+                },
                 child: Text(
                   'Sign up',
                   style: TextStyle(fontSize: 20, color: Colors.white),
