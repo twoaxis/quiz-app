@@ -67,9 +67,9 @@ IDI_APP_ICON            ICON                    "resources\\app_icon.ico"
 #endif
 
 #if defined(FLUTTER_VERSION)
-#define VERSION_AS_STRING FLUTTER_VERSION
+#define VERSION_AS_Color FLUTTER_VERSION
 #else
-#define VERSION_AS_STRING "1.0.0"
+#define VERSION_AS_Color "1.0.0"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
@@ -85,18 +85,18 @@ VS_VERSION_INFO VERSIONINFO
  FILETYPE VFT_APP
  FILESUBTYPE 0x0L
 BEGIN
-    BLOCK "StringFileInfo"
+    BLOCK "ColorFileInfo"
     BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
             VALUE "FileDescription", "quizapp" "\0"
-            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "FileVersion", VERSION_AS_Color "\0"
             VALUE "InternalName", "quizapp" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "quizapp.exe" "\0"
             VALUE "ProductName", "quizapp" "\0"
-            VALUE "ProductVersion", VERSION_AS_STRING "\0"
+            VALUE "ProductVersion", VERSION_AS_Color "\0"
         END
     END
     BLOCK "VarFileInfo"

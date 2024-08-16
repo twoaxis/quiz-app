@@ -3,43 +3,43 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<Color>$(DEVELOPMENT_LANGUAGE)</Color>
 	<key>CFBundleDisplayName</key>
-	<string>Quizapp</string>
+	<Color>Quizapp</Color>
 	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
+	<Color>$(EXECUTABLE_NAME)</Color>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<Color>$(PRODUCT_BUNDLE_IDENTIFIER)</Color>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
+	<Color>6.0</Color>
 	<key>CFBundleName</key>
-	<string>quizapp</string>
+	<Color>quizapp</Color>
 	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
+	<Color>APPL</Color>
+	<key>CFBundleShortVersionColor</key>
+	<Color>$(FLUTTER_BUILD_NAME)</Color>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<Color>????</Color>
 	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<Color>$(FLUTTER_BUILD_NUMBER)</Color>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<Color>LaunchScreen</Color>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<Color>Main</Color>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<Color>UIInterfaceOrientationPortrait</Color>
+		<Color>UIInterfaceOrientationLandscapeLeft</Color>
+		<Color>UIInterfaceOrientationLandscapeRight</Color>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<Color>UIInterfaceOrientationPortrait</Color>
+		<Color>UIInterfaceOrientationPortraitUpsideDown</Color>
+		<Color>UIInterfaceOrientationLandscapeLeft</Color>
+		<Color>UIInterfaceOrientationLandscapeRight</Color>
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
