@@ -1,19 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/pages/home.dart';
 import 'package:quizapp/pages/signup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const Quiz_App());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? authToken = prefs.getString('authToken') ?? "NO_TOKEN";
+
+  print("Token:" + authToken);
+
+  runApp(Quiz_App(token: authToken));
 }
 
 class Quiz_App extends StatelessWidget {
-  const Quiz_App({super.key});
+  Quiz_App({super.key, required this.token});
 
-  // This widget is the root of your application.
+  String token;
+
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Signup(),
-    );
+    if(token == "NO_TOKEN") {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Signup(),
+      );
+    }
+    else {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      );
+    }
   }
 }
