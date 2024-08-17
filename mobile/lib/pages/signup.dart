@@ -50,12 +50,12 @@ class _SignupState extends State<Signup> {
             Text(
               'Sign up',
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Text('Create Your Account'),
             SizedBox(
@@ -128,8 +128,10 @@ class _SignupState extends State<Signup> {
                         final prefs = await SharedPreferences.getInstance();
                         await prefs.setString('authToken', token);
 
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
                       }
                     } on DioException catch (e) {
                       if (e.response!.statusCode == 409) {

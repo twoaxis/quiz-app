@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/pages/home.dart';
+import 'package:quizapp/pages/start_quiz.dart';
 import 'package:quizapp/pages/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -7,7 +7,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  await prefs.remove('authToken');
+  // await prefs.remove('authToken');
   String? authToken = prefs.getString('authToken') ?? "NO_TOKEN";
 
   print("Token:" + authToken);
@@ -25,12 +25,13 @@ class Quiz_App extends StatelessWidget {
     if (token == "NO_TOKEN") {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Signup(),
+        home: StartQuiz(),
       );
-    } else {
+    }
+    else {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: StartQuiz(),
       );
     }
   }
