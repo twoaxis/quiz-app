@@ -39,7 +39,7 @@ class _SignupState extends State<Signup> {
               child: Text(
                 'Quiz App',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 35,
                   fontFamily: 'pacifico',
                 ),
               ),

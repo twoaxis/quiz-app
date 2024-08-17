@@ -7,6 +7,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.remove('authToken');
   String? authToken = prefs.getString('authToken') ?? "NO_TOKEN";
 
   print("Token:" + authToken);
@@ -19,16 +20,14 @@ class Quiz_App extends StatelessWidget {
 
   String token;
 
-
   @override
   Widget build(BuildContext context) {
-    if(token == "NO_TOKEN") {
+    if (token == "NO_TOKEN") {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Signup(),
       );
-    }
-    else {
+    } else {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomePage(),
