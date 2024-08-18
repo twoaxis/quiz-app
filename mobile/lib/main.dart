@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/pages/create_quiz.dart';
 import 'package:quizapp/pages/home.dart';
 import 'package:quizapp/pages/start_quiz.dart';
 import 'package:quizapp/pages/signup.dart';
@@ -32,7 +33,7 @@ class Quiz_App extends StatelessWidget {
     else {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: CreateQuiz(),
       );
     }
   }
