@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/pages/home.dart';
 import 'package:quizapp/pages/start_quiz.dart';
 import 'package:quizapp/pages/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -25,13 +26,13 @@ class Quiz_App extends StatelessWidget {
     if (token == "NO_TOKEN") {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: StartQuiz(),
+        home: Signup(),
       );
     }
     else {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: StartQuiz(),
+        home: HomePage(),
       );
     }
   }
