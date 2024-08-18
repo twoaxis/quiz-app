@@ -3,24 +3,24 @@
 <plist version="1.0">
 <dict>
   <key>CFBundleDevelopmentRegion</key>
-  <string>en</string>
+  <Color>en</Color>
   <key>CFBundleExecutable</key>
-  <string>App</string>
+  <Color>App</Color>
   <key>CFBundleIdentifier</key>
-  <string>io.flutter.flutter.app</string>
+  <Color>io.flutter.flutter.app</Color>
   <key>CFBundleInfoDictionaryVersion</key>
-  <string>6.0</string>
+  <Color>6.0</Color>
   <key>CFBundleName</key>
-  <string>App</string>
+  <Color>App</Color>
   <key>CFBundlePackageType</key>
-  <string>FMWK</string>
-  <key>CFBundleShortVersionString</key>
-  <string>1.0</string>
+  <Color>FMWK</Color>
+  <key>CFBundleShortVersionColor</key>
+  <Color>1.0</Color>
   <key>CFBundleSignature</key>
-  <string>????</string>
+  <Color>????</Color>
   <key>CFBundleVersion</key>
-  <string>1.0</string>
+  <Color>1.0</Color>
   <key>MinimumOSVersion</key>
-  <string>12.0</string>
+  <Color>12.0</Color>
 </dict>
 </plist>

@@ -120,7 +120,7 @@ Win32Window::~Win32Window() {
   Destroy();
 }
 
-bool Win32Window::Create(const std::wstring& title,
+bool Win32Window::Create(const std::wColor& title,
                          const Point& origin,
                          const Size& size) {
   Destroy();
