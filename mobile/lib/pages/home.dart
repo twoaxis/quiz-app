@@ -13,37 +13,44 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color(textcolor),
-        title: Text('Home' , style: TextStyle(color: Colors.white),
+        title: Text(
+          'Home',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Color(Buttoncolor)),
-                onPressed: () async {
-                  final prefs = await SharedPreferences.getInstance();
-                  await prefs.remove('authToken');
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Signup(),
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Color(Buttoncolor)),
+              onPressed: () async {
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.remove('authToken');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Signup(),
                   ),
-                  );
-                },
-                child: Text('Log out' ,
-                  style: TextStyle(color: Colors.white),
-                ),
+                );
+              },
+              child: Text(
+                'Log out',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           )
         ],
       ),
       body: Column(
-        children: [
-
-        ],
+        children: [],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            backgroundColor: Color(textcolor), // Dark background for bottom sheet
+            backgroundColor: Color(textcolor),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(16.0),
@@ -55,11 +62,9 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children:[
+                  children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
+                      onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12.0),
                         child: Text(
@@ -73,9 +78,7 @@ class HomePage extends StatelessWidget {
                     ),
                     Divider(),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
+                      onTap: () {},
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12.0),
                         child: Text(
@@ -93,8 +96,11 @@ class HomePage extends StatelessWidget {
             },
           );
         },
-        child: Icon(Icons.add, color: Colors.white),
-        backgroundColor: Color(Buttoncolor), // Adjust the color to your needs
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        backgroundColor: Color(Buttoncolor),
       ),
     );
   }
