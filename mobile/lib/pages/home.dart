@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:quizapp/pages/create_quiz.dart';
+import 'package:quizapp/pages/join_quiz.dart';
 import 'package:quizapp/pages/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../theme/theme.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  bool isBodyEmpty = true;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +27,9 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: ElevatedButton(
-              style:
-                  ElevatedButton.styleFrom(backgroundColor: Color(Buttoncolor)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(Buttoncolor),
+              ),
               onPressed: () async {
                 final prefs = await SharedPreferences.getInstance();
                 await prefs.remove('authToken');
@@ -37,15 +42,25 @@ class HomePage extends StatelessWidget {
               },
               child: Text(
                 'Log out',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           )
         ],
       ),
-      body: Column(
-        children: [],
-      ),
+      body: isBodyEmpty
+          ? Center(
+              child: Text(
+                'Empty',
+              ),
+            )
+          : Center(
+              child: Text(
+                'full',
+              ),
+            ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
@@ -64,21 +79,37 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0),
-                        child: Text(
-                          'Join Quiz',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18.0,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => JoinQuiz(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12.0),
+                          child: Text(
+                            'Join Quiz',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     Divider(),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CreateQuiz(),
+                          ),
+                        );
+                      },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 12.0),
                         child: Text(

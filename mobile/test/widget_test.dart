@@ -13,7 +13,9 @@ import 'package:quizapp/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(Quiz_App());
+    await tester.pumpWidget(Quiz_App(
+      token: 'authToken',
+    ));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
