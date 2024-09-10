@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/pages/create_quiz.dart';
+import 'package:quizapp/pages/home.dart';
 import '../theme/theme.dart';
 
 class StartQuiz extends StatelessWidget {
@@ -6,9 +8,32 @@ class StartQuiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
+    final deviceHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Start Quiz', style: TextStyle(color: Colors.white)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomePage(),
+              ),
+            );
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+        ),
+        title: Text(
+          'Start Quiz',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: deviceWidth * 0.05,
+          ),
+        ),
         backgroundColor: Color(textcolor),
       ),
       body: Center(
@@ -17,23 +42,42 @@ class StartQuiz extends StatelessWidget {
           children: [
             Text(
               'QUIZ',
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(
+                fontSize: deviceWidth * 0.15,
+              ),
             ),
             Text(
               'TIME',
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(
+                fontSize: deviceWidth * 0.15,
+              ),
             ),
             SizedBox(
-              height: 200,
+              height: deviceHeight * 0.2,
             ),
-            ElevatedButton(
+            SizedBox(
+              width: deviceWidth * 0.7,
+              height: deviceHeight * 0.08,
+              child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(Buttoncolor)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CreateQuiz(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Start Quiz',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ))
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: deviceWidth * 0.06,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
