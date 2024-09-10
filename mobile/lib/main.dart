@@ -3,37 +3,25 @@ import 'package:quizapp/pages/home.dart';
 import 'package:quizapp/pages/start_quiz.dart';
 import 'package:quizapp/pages/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  // await prefs.remove('authToken');
-  String? authToken = prefs.getString('authToken') ?? "NO_TOKEN";
-
-  print("Token:" + authToken);
-
-  runApp(Quiz_App(token: authToken));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(QuizApp()); // Corrected here
 }
 
-class Quiz_App extends StatelessWidget {
-  Quiz_App({super.key, required this.token});
-
-  String token;
+class QuizApp extends StatelessWidget {
+  const QuizApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    if (token == "NO_TOKEN") {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Signup(),
-      );
-    }
-    else {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomePage(),
-      );
-    }
+    return MaterialApp(
+      home: Scaffold(),
+    );
   }
 }
